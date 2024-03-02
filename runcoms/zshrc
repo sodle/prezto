@@ -10,4 +10,18 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+# Source local stuff
+if [[ -d "${ZDOTDIR:-$HOME}/zshrc.local.d" ]]; then
+  for file in ${ZDOTDIR:-$HOME}/zshrc.local.d/*; do
+    source "$file"
+  done
+fi
+
 # Customize to your needs...
+alias vi=nvim
+export EDITOR="nvim"
+alias v=nvim .
+
+
+
+
